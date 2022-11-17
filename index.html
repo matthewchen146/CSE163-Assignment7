@@ -1,0 +1,98 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kentucky Population Density, 2022</title>
+    <script type= "text/javascript" src="https://d3js.org/d3.v5.min.js"></script>
+    <script type= "text/javascript" src="https://d3js.org/topojson.v2.min.js"></script>
+    <script type= "text/javascript" src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        main {
+            width: min-content;
+        }
+
+        #svg-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            position: relative;
+        }
+
+        section {
+            width: auto;
+        }
+
+        .options {
+            position: absolute;
+        }
+
+        #tooltip {
+            position: absolute;
+            pointer-events: none;
+            user-select: none;
+
+            width: 120px;
+            font-size: .8rem;
+            background-color: white;
+            border-radius: .5rem;
+            padding: .5rem;
+            box-shadow: 2px 1px 1px rgba(0,0,0,.5);
+        }
+
+        #tooltip #info {
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Kentucky Population Density, 2022</h1>
+        <div id="svg-container"></div>
+        <section>
+            Matthew Chen<br>
+            Instructor: Suresh Lodha<br>
+            CMPS 163: Data programming for Visualization<br>
+            Fall 2022<br>
+            <h2>Credits</h2>
+            <ul>
+                <li><a href="https://d3js.org/us-10m.v1.json">Map data</a></li>
+                <li><a href="https://bl.ocks.org/mbostock/4122298">TopoJSON for US</a></li>
+                <li><a href="https://bl.ocks.org/mbostock/5562380">Calfornia Example</a></li>
+            </ul>
+            <h2>Files</h2>
+            <ul>
+                <li>index.html</li>
+                <li>main.js</li>
+                <li>Population-Density By County.csv</li>
+                <li>us-10m.v1.json</li>
+            </ul>
+        </section>
+    </main>
+    <div id="tooltip">
+        <div id="name"></div>
+        <div id="info">
+            <div id="label"></div>
+            <div id="density"></div>
+        </div>
+    </div>
+    <script src="./main.js"></script>
+</body>
+</html>
